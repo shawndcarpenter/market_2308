@@ -2,7 +2,6 @@ require './lib/item'
 require './lib/vendor'
 
 RSpec.describe Vendor do
-
   it 'creates item objects with prices' do
     item1 = Item.new({name: 'Peach', price: "$0.75"})
     item2 = Item.new({name: 'Tomato', price: '$0.50'})

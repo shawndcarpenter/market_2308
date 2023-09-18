@@ -3,7 +3,6 @@ require './lib/vendor'
 require './lib/market'
 
 RSpec.describe Market do
-
   it 'creates a market' do
     market = Market.new("South Pearl Street Farmers Market")
     expect(market.name).to eq("South Pearl Street Farmers Market")
@@ -82,9 +81,8 @@ RSpec.describe Market do
           })
     end
 
-    xit 'can show overstocked items' do
+    it 'can show overstocked items' do
       expect(@market.overstocked_items).to eq(@item1)
     end
-
   end
 end

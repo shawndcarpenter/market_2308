@@ -38,29 +38,27 @@ class Market
     items.uniq.sort
   end
 
-  def total_inventory
-    #iterate through vendors to pull out items sold from each
-    #create hash with subhashes of items
-    items = @vendors.map do |vendor|
-      vendor.inventory.map do |item|
-        item
-      end
-    end
-    hash = Hash.new
+  # def total_inventory
+  #   #iterate through vendors to pull out items sold from each
+  #   #create hash with subhashes of items
+  #   items = @vendors.map do |vendor|
+  #     vendor.inventory.map do |item|
+  #       item
+  #     end
+  #   end
+  #   hash = Hash.new
 
-    hash = items.flat_map.uniq do |item|
-      "quantity" => item.value,
-      "vendors" => vendors_that_sell(item)
-    end
-    @total_inventory = hash
-  end
+  #   hash = items.flat_map.uniq do |item|
+  #     "quantity" => item.value,
+  #     "vendors" => vendors_that_sell(item)
+  #   end
+  #   @total_inventory = hash
+  # end
 
-  def overstocked_items
-    overstocked = @total_inventory.map do |item|
-      item if item[quantity] > 50 && item[vendors].length > 1
-    end
-    overstocked.compact
-  end
-
-
+  # def overstocked_items
+  #   overstocked = @total_inventory.map do |item|
+  #     item if item[quantity] > 50 && item[vendors].length > 1
+  #   end
+  #   overstocked.compact
+  # end
 end

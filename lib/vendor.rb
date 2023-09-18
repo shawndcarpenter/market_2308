@@ -16,7 +16,6 @@ class Vendor
     end
   end
   
-  
   def check_stock(item)
     if !@inventory.include?(item)
       0
